@@ -9,14 +9,13 @@ import java.util.Scanner;
 
 public class Main {
 
-    // Metoda za kreiranje DataSource za povezivanje s bazom podataka
     private static DataSource createDataSource() {
         SQLServerDataSource ds = new SQLServerDataSource();
         ds.setServerName("localhost");
         ds.setDatabaseName("AdventureWorksOBP"); // Promijenite naziv baze prema svojoj konfiguraciji
-        ds.setUser("sa"); // Korisničko ime
-        ds.setPassword("SQL"); // Lozinka
-        ds.setEncrypt(false); // Ova linija može biti izostavljena
+        ds.setUser("sa");
+        ds.setPassword("SQL");
+        ds.setEncrypt(false);
         return ds;
     }
 
@@ -83,7 +82,7 @@ public class Main {
         try {
             System.out.print("Unesite ID države za izmjenu: ");
             int id = scanner.nextInt();
-            scanner.nextLine(); // Čisti novi red
+            scanner.nextLine();
 
             if (id <= 3) {
                 System.out.println("Možete mijenjati samo države s ID-jem većim od 3.");
@@ -125,7 +124,7 @@ public class Main {
         try {
             System.out.print("Unesite ID države za brisanje: ");
             int id = scanner.nextInt();
-            scanner.nextLine(); // Čisti novi red
+            scanner.nextLine();
 
             if (id <= 3) {
                 System.out.println("Možete brisati samo države s ID-jem većim od 3.");
